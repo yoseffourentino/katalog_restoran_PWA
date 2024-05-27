@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 const DrawerInitiator = {
     init({ button, nav, content }) {
         button.addEventListener('click', (event) => {

@@ -1,6 +1,7 @@
+/* eslint-disable indent */
 import banner from '../../../public/images/heros/hero-image_4.jpg';
 import RestaurantDbSource from '../../data/restaurantdb-source';
-import { createRestaurantItemTemplate} from '../temp/template-creator';
+import { createRestaurantItemTemplate } from '../temp/template-creator';
 
 const Home = {
     async render() {
@@ -14,7 +15,7 @@ const Home = {
                 
             </div>
         </div>
-        `
+        `;
     },
 
     async afterRender() {
@@ -22,8 +23,8 @@ const Home = {
         const restaurantContainer = document.querySelector('#restaurants');
         restaurants.forEach((restaurant) => {
             restaurantContainer.innerHTML += createRestaurantItemTemplate(restaurant);
-        })
-    }
-}
+        });
+    },
+};
 
 export default Home;

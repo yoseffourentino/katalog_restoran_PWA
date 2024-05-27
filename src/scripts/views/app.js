@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 import DrawerInitiator from '../utils/drawer-initiator';
 import UrlParser from '../routes/url-parser';
 import routes from '../routes/routes';
@@ -17,7 +18,6 @@ class App {
             nav: this._nav,
             content: this._content,
         });
-      // kita bisa menginisiasikan komponen lain bila ada
     }
 
     async renderPage() {
@@ -26,7 +26,6 @@ class App {
         this._content.innerHTML = await page.render();
         await page.afterRender();
     }
-
 }
 
 export default App;

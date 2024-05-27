@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 import { openDB } from "idb";
 import CONFIG from "../globals/config";
 
@@ -11,6 +12,7 @@ const dbPromise = openDB(DATABASE_NAME, DATABASE_VERSION, {
 
 const FavouriteRestaurantIdb = {
     async getRestaurant(id) {
+        console.log(`Getting restaurant with id: ${id}`);
         return (await dbPromise).get(OBJECT_STORE_NAME, id);
     },
     async getAllRestaurant() {
