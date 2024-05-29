@@ -6,23 +6,24 @@ const { DATABASE_NAME, DATABASE_VERSION, OBJECT_STORE_NAME } = CONFIG;
 
 const dbPromise = openDB(DATABASE_NAME, DATABASE_VERSION, {
     upgrade(database) {
-        database.createObjectStore(OBJECT_STORE_NAME, { keyPath: "id" });
+        database.createObjectStore('restaurant', { keyPath: "id" });
     },
 });
 
 const FavouriteRestaurantIdb = {
     async getRestaurant(id) {
         console.log(`Getting restaurant with id: ${id}`);
-        return (await dbPromise).get(OBJECT_STORE_NAME, id);
+        return (await dbPromise).get('restaurant', id);
     },
     async getAllRestaurant() {
-        return (await dbPromise).getAll(OBJECT_STORE_NAME);
+        return (await dbPromise).getAll('restaurant');
     },
     async putRestaurant(restaurant) {
-        return (await dbPromise).put(OBJECT_STORE_NAME, restaurant);
+        console.log('restaurant:', restaurant);
+        return (await dbPromise).put('restaurant', restaurant);
     },
     async deleteRestaurant(id) {
-        return (await dbPromise).delete(OBJECT_STORE_NAME, id);
+        return (await dbPromise).delete('restaurant', id);
     },
 };
 

@@ -20,8 +20,14 @@ const FavoriteButtonInitiator = {
     },
 
     async _isRestaurantExist(id) {
-        const restaurant = await FavoriteRestaurantIdb.getRestaurant(id);
-        return !!restaurant;
+        console.log('Checking if restaurant exists...');
+        try {
+            const restaurant = await FavoriteRestaurantIdb.getRestaurant(id);
+            return !!restaurant;
+        } catch (error) {
+            console.error('Error checking if restaurant exists:', error);
+            return false;
+        }
     },
 
     _renderFavorite() {
