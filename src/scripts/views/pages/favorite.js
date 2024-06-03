@@ -1,23 +1,21 @@
 /* eslint-disable indent */
-import FavouriteRestaurantIdb from "../../data/favorite-restaurant-idb";
+import FavoriteRestaurantIdb from "../../data/favorite-restaurant-idb";
 import { createRestaurantItemTemplate } from "../temp/template-creator";
 
-const Favourites = {
+const Favorite = {
     async render() {
         return `
-        <h1>Favourite Restaurants</h1>
+        <h1 class="fav-title">Favourite Restaurants</h1>
         
-        <section class="cards-container"></section>
+        <section class="fav-container"></section>
 
         `;
     },
 
     async afterRender() {
-        const cardsContainer = document.querySelector(".cards-container");
-        const loadingIndicator = document.querySelector(".loading-indicator");
-
-        const renderFavouriteRestaurants = async () => {
-            const restaurants = await FavouriteRestaurantIdb.getAllRestaurant();
+        const cardsContainer = document.querySelector(".fav-container");
+        const renderFavoriteRestaurants = async () => {
+            const restaurants = await FavoriteRestaurantIdb.getAllRestaurant();
             cardsContainer.innerHTML = '';
 
             restaurants.forEach((restaurant) => {
@@ -25,11 +23,9 @@ const Favourites = {
             });
         };
 
-        await renderFavouriteRestaurants();
-
-        FavouriteRestaurantIdb.addChangeListener(renderFavouriteRestaurants);
+        await renderFavoriteRestaurants();
     },
 
 };
 
-export default Favourites;
+export default Favorite;

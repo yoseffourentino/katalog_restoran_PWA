@@ -10,7 +10,7 @@ const Home = {
             <img src=${banner} alt="food photo with decoration" >
         </div>
         <div class="content">
-            <h2 class="title-content">Explore Restaurants</h2>
+            <h1 class="title-content">Explore Restaurants</h1>
             <div id="restaurants" class="restaurants">
                 
             </div>

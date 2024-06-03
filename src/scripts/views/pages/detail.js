@@ -15,21 +15,21 @@ const Detail = {
     async afterRender() {
         try {
             const url = UrlParser.parseActiveUrlWithoutCombiner();
-            const restaurant = await TheRestaurantDbSource.detailRestaurant(url.id);
+            const restaurants = await TheRestaurantDbSource.detailRestaurant(url.id);
             const restaurantContainer = document.querySelector('#restaurant');
-            restaurantContainer.innerHTML = createRestaurantDetailTemplate(restaurant);
+            restaurantContainer.innerHTML = createRestaurantDetailTemplate(restaurants);
 
             FavButtonInitiator.init({
                 favoriteButtonContainer: document.querySelector('#likeButtonContainer'),
                 restaurant: {
-                    id: restaurant.id,
-                    name: restaurant.name,
-                    city: restaurant.city,
-                    rating: restaurant.rating,
-                    pictureId: restaurant.pictureId,
-                    description: restaurant.description,
-                    address: restaurant.address,
-                    menu: restaurant.menus,
+                    id: restaurants.restaurant.id,
+                    name: restaurants.restaurant.name,
+                    city: restaurants.restaurant.city,
+                    rating: restaurants.restaurant.rating,
+                    pictureId: restaurants.restaurant.pictureId,
+                    description: restaurants.restaurant.description,
+                    address: restaurants.restaurant.address,
+                    menu: restaurants.restaurant.menus,
                 },
             });
         } catch (error) {

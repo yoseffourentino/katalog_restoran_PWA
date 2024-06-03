@@ -45,13 +45,13 @@ const createRestaurantDetailTemplate = (e) => `
     </div>
 `;
 const createFavoriteButtonTemplate = () => `
-    <button aria-label="like this restaurant" id="fav-btn" class="favorite">
+    <button aria-label="like this restaurant" id="fav-btn" class="fav-btn">
         <i class="fa fa-heart-o" aria-hidden="true"></i>
     </button>
     `;
 
 const createFavoritedButtonTemplate = () => `
-    <button aria-label="unlike this restaurant" id="fav-btn" class="favorite">
+    <button aria-label="unlike this restaurant" id="fav-btn" class="fav-btn">
         <i class="fa fa-heart" aria-hidden="true"></i>
     </button>
     `;

@@ -6,9 +6,14 @@
     box-sizing: border-box;
     font-family: 'Poppins';
 }
-
+html{
+    height: 100%;
+}
 body {
     background-color: rgb(246, 233, 178);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 a {
@@ -84,6 +89,7 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 30px;
 }
 .banner{
     width: 100%;
@@ -115,7 +121,8 @@ main {
 
 }
 
-.restaurants {
+.restaurants,
+.fav-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 40px;
@@ -156,7 +163,8 @@ main {
 .card-detail .fa-star {
     color: yellow;
 }
-.card .fa-location-dot {
+.card .fa-location-dot,
+.card-detail .fa-location-dot {
     color: rgb(243, 56, 56);
 }
 .card .detail-button{
@@ -186,6 +194,11 @@ main {
 }
 .card-detail img{
     max-width: 1000px;
+    border-radius: 7px;
+    margin-bottom: 5px;
+}
+.desc{
+    margin-bottom: 7px;
 }
 .restaurant-name{
     display: flex;
@@ -194,9 +207,11 @@ main {
 }
 .categories{
     font-weight: bold;
+    margin-top: 7px;
 }
 .menu .foods{
     font-weight: bold;
+    margin-top: 7px;
 }
 .customer-review h3{
     margin: 10px;
@@ -215,12 +230,34 @@ main {
 .review{
     margin-bottom: 5px;
 }
+.fav-btn{
+    width: 55px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(122, 186, 120);
+    
+    position: fixed;
+    bottom: 16px;
+    right: 16px;
+    border-radius: 50%;
+    border: 0;
+    
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+}
+/* Favorite */
+.fav-title{
+    margin: 30px;
+    color:  rgb(10, 104, 71);
+}
 /* footer */
 footer {
+    margin-top: auto;
     background-color: rgb(10, 104, 71);
     width: 100%;
-    margin-top: 30px;
-    position: absolute;
 }
 
 footer p {

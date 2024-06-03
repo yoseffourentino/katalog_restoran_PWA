@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start-dev": "webpack-dev-server --config webpack.dev.js",
-    "build": "webpack --config webpack.dev.js",
-    "serve": "http-server dist",
+    "build": "webpack --config webpack.prod.js",
+    "serve": "http-server dist --port 9090",
     "test": "jest",
     "test:watch": "jest --watchAll"
   },

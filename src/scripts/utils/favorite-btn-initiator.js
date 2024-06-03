@@ -20,7 +20,6 @@ const FavoriteButtonInitiator = {
     },
 
     async _isRestaurantExist(id) {
-        console.log('Checking if restaurant exists...');
         try {
             const restaurant = await FavoriteRestaurantIdb.getRestaurant(id);
             return !!restaurant;
@@ -41,10 +40,10 @@ const FavoriteButtonInitiator = {
     },
 
     _renderFavorited() {
-        this._restaurantButtonContainer.innerHTML = createFavoritedButtonTemplate();
+        this._favoriteButtonContainer.innerHTML = createFavoritedButtonTemplate();
 
-        const restaurantButton = document.querySelector('#fav-btn');
-        restaurantButton.addEventListener('click', async () => {
+        const favoriteButton = document.querySelector('#fav-btn');
+        favoriteButton.addEventListener('click', async () => {
             await FavoriteRestaurantIdb.deleteRestaurant(this._restaurant.id);
             this._renderButton();
         });
