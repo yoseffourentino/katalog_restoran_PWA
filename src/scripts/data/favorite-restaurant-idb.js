@@ -1,5 +1,3 @@
-/* eslint-disable no-return-await */
-/* eslint-disable indent */
 import { openDB, deleteDB } from "idb";
 import CONFIG from "../globals/config";
 

@@ -1,4 +1,3 @@
-/* eslint-disable indent */
 const CONFIG = {
     BASE_URL: 'https://restaurant-api.dicoding.dev/',
     BASE_SMALL_IMAGE_URL: 'https://restaurant-api.dicoding.dev/images/small/',

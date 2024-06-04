@@ -1,5 +1,6 @@
 @media screen and (min-width: 1200px){
-    .restaurants{
+    .restaurants,
+    .fav-container{
         margin: 0px auto;
         max-width: 1400px;
 
@@ -7,7 +8,8 @@
 }
 
 @media screen and (max-width: 1200px){
-    .restaurants{
+    .restaurants,
+    .fav-container{
         grid-template-columns: repeat(3, 1fr);
         gap: 10px;
         margin-left: 20px;
@@ -17,7 +19,8 @@
 }
 
 @media screen and (max-width: 1024px){
-    .restaurants{
+    .restaurants,
+    .fav-container{
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 10px;
@@ -65,7 +68,8 @@
 }
 
 @media screen and (max-width: 600px) {
-    .restaurants{
+    .restaurants,
+    .fav-container{
         grid-template-columns: 1fr;
     }
     #search{
