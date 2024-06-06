@@ -1,4 +1,3 @@
-/* eslint-disable indent */
 import CONFIG from "../../globals/config";
 
 const createRestaurantItemTemplate = (restaurant) => `
@@ -17,30 +16,32 @@ const createRestaurantItemTemplate = (restaurant) => `
         </div>                                                                                                                                     
 `;
 const createRestaurantDetailTemplate = (e) => `
-    <div class="card-detail">
-        <img src="${CONFIG.BASE_LARGE_IMAGE_URL}${e.restaurant.pictureId}" alt="${e.restaurant.name} restaurant">
-        <div class="restaurant-name">
-            <h3 class="resto-name">${e.restaurant.name}</h3>
-            <h5 class="rating"><i class="fa-solid fa-star"></i>  ${e.restaurant.rating}</h5>
+    <div class="detail-container">
+        <div class="card-detail">
+            <img src="${CONFIG.BASE_LARGE_IMAGE_URL}${e.restaurant.pictureId}" alt="${e.restaurant.name} restaurant">
+            <div class="restaurant-name">
+                <h3 class="resto-name">${e.restaurant.name}</h3>
+                <h5 class="rating"><i class="fa-solid fa-star"></i>  ${e.restaurant.rating}</h5>
+            </div>
+            <h4 class="city"><i class="fa-solid fa-location-dot"></i> ${e.restaurant.city} - ${e.restaurant.address}</h4>
+            <p class="desc">${e.restaurant.description}</p>
+            <p class="categories">Categories: <p>${e.restaurant.categories.map((categories) => categories.name)}</p></p>
+            
+            <div class="menu">
+                <p class="foods">Foods: <p>${e.restaurant.menus.foods.map((food) => food.name).join(", ")}</p></p>
+                <p class="foods">Drinks: <p>${e.restaurant.menus.drinks.map((drinks) => drinks.name).join(", ")}</p></p>
+            </div>
         </div>
-        <h4 class="city"><i class="fa-solid fa-location-dot"></i> ${e.restaurant.city} - ${e.restaurant.address}</h4>
-        <p class="desc">${e.restaurant.description}</p>
-        <p class="categories">Categories: <p>${e.restaurant.categories.map((categories) => categories.name)}</p></p>
-        
-        <div class="menu">
-            <p class="foods">Foods: <p>${e.restaurant.menus.foods.map((food) => food.name).join(", ")}</p></p>
-            <p class="foods">Drinks: <p>${e.restaurant.menus.drinks.map((drinks) => drinks.name).join(", ")}</p></p>
-        </div>
-    </div>
-    <div class="customer-review">
-        <h3>Customer Review:</h3>
-        <div class="review-container">
-            ${e.restaurant.customerReviews.map((review) => `
-            <p class="name">${review.name}</p>
-            <p class="date">${review.date}</p>
-            <p class="review">${review.review}</p>
-            <hr>   
-            `).join("")}
+        <div class="customer-review">
+            <h3>Customer Review:</h3>
+            <div class="review-container">
+                ${e.restaurant.customerReviews.map((review) => `
+                <p class="name">${review.name}</p>
+                <p class="date">${review.date}</p>
+                <p class="review">${review.review}</p>
+                <hr>   
+                `).join("")}
+            </div>
         </div>
     </div>
 `;
@@ -57,8 +58,8 @@ const createFavoritedButtonTemplate = () => `
     `;
 
 export {
-    createRestaurantItemTemplate,
-    createRestaurantDetailTemplate,
-    createFavoriteButtonTemplate,
-    createFavoritedButtonTemplate,
+  createRestaurantItemTemplate,
+  createRestaurantDetailTemplate,
+  createFavoriteButtonTemplate,
+  createFavoritedButtonTemplate,
 };
